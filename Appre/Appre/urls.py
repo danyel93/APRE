@@ -10,7 +10,7 @@ urlpatterns = patterns('',
 	url(r'^admin/', include(admin.site.urls)),
     
     # url de la aplicacion C_inicio
-    url(r'^',include ('Aplicaciones.Alumno.urls')),
+    url(r'^',include('Aplicaciones.Perfil.urls')),
 
     # Url para vizualizar las todas las posibles imagenes 
     url(r'Imagenes/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.MEDIA_ROOT, } ),

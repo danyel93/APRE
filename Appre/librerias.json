@@ -1,0 +1,13 @@
+{
+	"PYTHON": {
+		"Django": "V:1.7.1",
+		"django-allauth":"V:0.18.0",
+		"pip":"V:1.5.6",
+		"setuptools":"V:3.6",
+		"unipath":"V:1.0",
+    },
+
+    "JAVASCRIPT": {
+
+    },
+}

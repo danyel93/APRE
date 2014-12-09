@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Aplicaciones del Sistema "Aplicaciones(carpeta)"."alumno(carpeta)"
     'Aplicaciones.Alumno',
+    'Aplicaciones.Perfil',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -95,4 +96,17 @@ STATIC_URL = '/static/'
 # Ruta de los archivos estaticos
 STATICFILES_DIRS = (
     RUTA_PROYECTO.child('static'),
+)
+TEMPLATE_CONTEXT_PROCESSORS = (
+    
+    # Required by allauth template tags
+    "django.core.context_processors.request",
+    "django.contrib.auth.context_processors.auth",
+    'django.core.context_processors.debug', 
+    'django.core.context_processors.i18n', 
+    'django.core.context_processors.media', 
+    'django.core.context_processors.static', 
+    'django.core.context_processors.tz', 
+    'django.contrib.messages.context_processors.messages'
+
 )
