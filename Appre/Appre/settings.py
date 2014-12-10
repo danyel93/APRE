@@ -28,7 +28,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+SITE_ID=1
 # Application definition
 
 INSTALLED_APPS = (
@@ -41,6 +41,15 @@ INSTALLED_APPS = (
     # Aplicaciones del Sistema "Aplicaciones(carpeta)"."alumno(carpeta)"
     'Aplicaciones.Alumno',
     'Aplicaciones.Perfil',
+    'Aplicaciones.Principal',
+    # Requerido por django-allouth
+    'django.contrib.sites',
+    # Django-allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -97,10 +106,17 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     RUTA_PROYECTO.child('static'),
 )
+
+
+
+# Iniciando django-allauth
 TEMPLATE_CONTEXT_PROCESSORS = (
     
     # Required by allauth template tags
     "django.core.context_processors.request",
+    # allauth specific context processors
+    "allauth.account.context_processors.account",
+    "allauth.socialaccount.context_processors.socialaccount",
     "django.contrib.auth.context_processors.auth",
     'django.core.context_processors.debug', 
     'django.core.context_processors.i18n', 
@@ -110,3 +126,46 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages'
 
 )
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+    # `allauth` specific authentication methods, such as login by e-mail
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+ 
+# auth and allauth settings
+LOGIN_REDIRECT_URL = '/'
+SOCIALACCOUNT_QUERY_EMAIL = True
+SOCIALACCOUNT_PROVIDERS = {
+    
+    'facebook': {
+        'SCOPE': ['email', 'publish_stream'],
+        'METHOD': 'js_sdk',  # instead of 'oauth2'
+        'VERIFIED_EMAIL': False
+
+    },
+    'google': {
+        'SCOPE': ['profile', 'email'],
+        'AUTH_PARAMS': { 'access_type': 'online' }
+
+    },
+}
+# Cuenta de correo electronico
+
+EMAIL_HOST='mail.grupocanton.com'
+EMAIL_HOST_USER='arturo@grupocanton.com'
+EMAIL_HOST_PASSWORD='J2ns392(sd_)skl'
+EMAIL_PORT=587
+EMAIL_USE_TLS = True
+# auth and allauth settings
+LOGIN_REDIRECT_URL = '/'
+SOCIALACCOUNT_QUERY_EMAIL = True 
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_USERNAME_MIN_LENGTH = 10
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_SUBJECT_PREFIX ="Tu Aviso"
+SOCIALACCOUNT_EMAIL_VERIFICATION =  "optional"
+SOCIALACCOUNT_EMAIL_REQUIRED =  False 

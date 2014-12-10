@@ -1,8 +1,11 @@
 from django.db import models
-# Importo el modelo de Usuarios
+# Importo libreria del tiempo
+from django.utils import timezone
+# Importo el usuario
 from django.contrib.auth.models import User
-# Importo la libreria de django para la hora
-from django.utils import timezone, timedelta
+# Importo el timedelta  para aumentar dias a los modelos
+from datetime import datetime, timedelta
+
 
 
 # MODELO PERFILES
@@ -14,7 +17,7 @@ class Perfil(models.Model):
 	fecha_registro = models.DateField(default=timezone.now)
 	numero_control = models.CharField(max_length=150)
 	celular = models.CharField(max_length=50)
-	verificacion = models.BooleanField(default=False,null=True,blank=True)
+	verificacion = models.BooleanField(default=False)
 	tipo_usuario = models.CharField(max_length=50,null=True,blank=True)
 	editar = models.BooleanField(default=True)
 		

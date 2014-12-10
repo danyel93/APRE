@@ -1,0 +1,31 @@
+{% extends "base.html"%}
+
+{% block title%}
+	Registro Usuario
+{% endblock%}
+
+{% load i18n %}
+{% load account %}
+{% load url from future %}
+
+<!-- Contenido del Bloque -->
+{% block content %}
+	
+		<!-- Redes Solciales -->
+		
+		<div class="redes">
+			<div class="facebook box-redes">
+				
+				<span>
+					<i aria-hidden="true" class="icon-tumor f-mediana"></i>
+				</span>
+				<a href="/accounts/facebook/login/">Inicia Sesión con Facebook</a>
+			</div>
+			
+			<div class="google box-redes">
+				<a href="/accounts/google/login/">Inicia Sesión con Google</a>
+			</div>
+		</div>
+		
+{% endblock%}	
+<!-- FIN/Contenido del Bloque -->
