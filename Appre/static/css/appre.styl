@@ -1,0 +1,41 @@
+@import 'nib'
+@import 'nib/gradients'
+//*VARIABLES DE COLORES*//
+rojo = #c0392b
+rojo-hover = #e74c3c
+verde = #27ae60
+verde-hover = #2ecc71
+gris = #7f8c8d
+
+//*ESTILOS TAGS*//
+html,body
+	width 100%
+	position relative
+	margin 0
+	font-family 'Raleway', sans-serif
+	font-size 16px
+	
+ul
+	list-style none
+/*********************************
+	iconos para las secciones
+**********************************/
+@font-face 
+	font-family: 'icomoon'
+	src: url('../fonts/icomoon.eot')
+	src: url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.svg#icomoon') format('svg')
+	font-weight: normal
+	font-style: normal
+/*******Iconos********/
+@import 'stylus/iconos.styl'
+/*******Clases********/
+@import 'stylus/clases.styl'
+////////////////////////////////////
+////////IMPORTANDO SECCIONES///////
+///////////////////////////////////
+/*******HEADER********/
+@import 'stylus/header.styl'
+
