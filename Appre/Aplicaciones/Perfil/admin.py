@@ -1,5 +1,10 @@
 from django.contrib import admin
-from .models import Perfil, Codigo
+from .models import Perfil, Codigo , Carreras
+
+class AdminCarrera(admin.ModelAdmin):
+	list_display = ('plan_estudios','nombre_carrera')
+
+admin.site.register(Carreras,AdminCarrera)
 
 class AdminPerfil(admin.ModelAdmin):
 	list_display = ('usuario','nombre')
