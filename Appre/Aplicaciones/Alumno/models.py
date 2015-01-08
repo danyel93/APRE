@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 # Importo el timedelta  para aumentar dias a los modelos
 from datetime import datetime, timedelta
 # Importo Modelos de otra aplicacion Perfil
-from Aplicaciones.Perfil.models import Perfil
+from Aplicaciones.Perfil.models import Perfil, Carrera
 
 # Modelo Cronograma
 class Cronograma(models.Model):
@@ -22,8 +22,11 @@ class Cronograma(models.Model):
 
 # Modelo Alumno
 class Alumno(models.Model):
-	usuario = models.OneToOneField(User, null=True, blank=True)
+	# Relaciones BD
 	cronograma = models.OneToOneField(Cronograma, null=True, blank=True)
+	perfil = models.OneToOneField(Perfil,null=True,blank=True)
+	carrera = models.ForeignKey(Carrera,null=True,blank=True)
+	# Campos Normales
 	calle = models.CharField(max_length=250,null=True,blank=True)
 	numero_casa = models.CharField(max_length=10,null=True,blank=True)
 	colonia = models.CharField(max_length=100,null=True,blank=True)

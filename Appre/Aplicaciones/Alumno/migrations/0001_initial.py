@@ -2,13 +2,12 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
-from django.conf import settings
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+        ('Perfil', '0001_initial'),
     ]
 
     operations = [
@@ -27,6 +26,7 @@ class Migration(migrations.Migration):
                 ('cali_ae', models.PositiveSmallIntegerField(max_length=3, null=True, blank=True)),
                 ('cali_final', models.PositiveSmallIntegerField(max_length=3, null=True, blank=True)),
                 ('intentos', models.TextField()),
+                ('carrera', models.ForeignKey(blank=True, to='Perfil.Carrera', null=True)),
             ],
             options={
             },
@@ -56,8 +56,8 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='alumno',
-            name='usuario',
-            field=models.OneToOneField(null=True, blank=True, to=settings.AUTH_USER_MODEL),
+            name='perfil',
+            field=models.OneToOneField(null=True, blank=True, to='Perfil.Perfil'),
             preserve_default=True,
         ),
     ]

@@ -15,11 +15,12 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Carreras',
+            name='Carrera',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('plan_estudios', models.CharField(max_length=100, null=True, blank=True)),
                 ('nombre_carrera', models.CharField(max_length=100, null=True, blank=True)),
+                ('modalidad', models.CharField(max_length=100, null=True, blank=True)),
             ],
             options={
             },
@@ -32,7 +33,7 @@ class Migration(migrations.Migration):
                 ('tipo', models.CharField(max_length=50)),
                 ('llave', models.CharField(max_length=100)),
                 ('fecha_creada', models.DateField(default=django.utils.timezone.now)),
-                ('fecha_caducidad', models.DateField(default=datetime.datetime(2015, 1, 14, 22, 36, 47, 512000))),
+                ('fecha_caducidad', models.DateField(default=datetime.datetime(2015, 1, 15, 16, 6, 28, 855000))),
                 ('validada', models.BooleanField(default=False)),
             ],
             options={
@@ -53,17 +54,11 @@ class Migration(migrations.Migration):
                 ('tipo_usuario', models.CharField(max_length=50, null=True, blank=True)),
                 ('editar', models.BooleanField(default=True)),
                 ('activo', models.BooleanField(default=False)),
-                ('carrera', models.ForeignKey(to='Perfil.Carreras')),
+                ('codigo', models.OneToOneField(null=True, blank=True, to='Perfil.Codigo')),
                 ('usuario', models.OneToOneField(null=True, blank=True, to=settings.AUTH_USER_MODEL)),
             ],
             options={
             },
             bases=(models.Model,),
-        ),
-        migrations.AddField(
-            model_name='codigo',
-            name='perfil',
-            field=models.ForeignKey(blank=True, to='Perfil.Perfil', null=True),
-            preserve_default=True,
         ),
     ]

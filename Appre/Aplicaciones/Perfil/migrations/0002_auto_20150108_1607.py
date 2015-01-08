@@ -8,14 +8,14 @@ import datetime
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('Perfil', '0002_auto_20150107_2238'),
+        ('Perfil', '0001_initial'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='codigo',
             name='fecha_caducidad',
-            field=models.DateField(default=datetime.datetime(2015, 1, 14, 23, 3, 14, 982000)),
+            field=models.DateField(default=datetime.datetime(2015, 1, 15, 16, 7, 59, 287000)),
             preserve_default=True,
         ),
     ]
