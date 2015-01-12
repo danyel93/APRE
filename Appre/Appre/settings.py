@@ -42,6 +42,8 @@ INSTALLED_APPS = (
     'Aplicaciones.Alumno',
     'Aplicaciones.Perfil',
     'Aplicaciones.Principal',
+    'Aplicaciones.Docentes',
+    'Aplicaciones.Residencia',
     # Requerido por django-allouth
     'django.contrib.sites',
     # Django-allauth

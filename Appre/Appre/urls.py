@@ -13,6 +13,8 @@ urlpatterns = patterns('',
     url(r'^',include('Aplicaciones.Principal.urls')),
     # url de la aplicacion Perfil
     url(r'^Perfil/',include('Aplicaciones.Perfil.urls')),
+    # url de la aplicacion Docentes
+    url(r'^Perfil/',include('Aplicaciones.Docentes.urls')),
     # url de la seccion de registro, perfil y logeo
     url(r'^accounts/', include('allauth.urls')),
     # Url para vizualizar las todas las posibles imagenes 

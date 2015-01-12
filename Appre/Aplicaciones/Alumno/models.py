@@ -7,6 +7,10 @@ from django.contrib.auth.models import User
 from datetime import datetime, timedelta
 # Importo Modelos de otra aplicacion Perfil
 from Aplicaciones.Perfil.models import Perfil, Carrera
+# Importo Modelos de la aplicacion Docentes
+from Aplicaciones.Docentes.models import Asesor_Interno
+# Importo Aplicacion Residencias 
+from Aplicaciones.Residencia.models import Proyecto
 
 # Modelo Cronograma
 class Cronograma(models.Model):
@@ -23,9 +27,11 @@ class Cronograma(models.Model):
 # Modelo Alumno
 class Alumno(models.Model):
 	# Relaciones BD
+	proyecto = models.ForeignKey(Proyecto,null=True,blank=True)
 	cronograma = models.OneToOneField(Cronograma, null=True, blank=True)
 	perfil = models.OneToOneField(Perfil,null=True,blank=True)
 	carrera = models.ForeignKey(Carrera,null=True,blank=True)
+	asesor_interno = models.ForeignKey(Asesor_Interno,null=True,blank=True)
 	# Campos Normales
 	calle = models.CharField(max_length=250,null=True,blank=True)
 	numero_casa = models.CharField(max_length=10,null=True,blank=True)
