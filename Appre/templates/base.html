@@ -13,7 +13,7 @@
         </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=0" />
-      <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{{STATIC_URL}}css/normalize.css">
         <link rel="stylesheet" href="{{STATIC_URL}}css/appre.css">
         <script src="{{STATIC_URL}}js/vendor/modernizr-2.6.2.min.js"></script>
@@ -26,18 +26,30 @@
         <header>
             <div class="grid">
                 <!-- MODULO LOGIN|REGISTRARSE -->
+                <div class="logo">
+                    <img src="{{STATIC_URL}}img/logo.png" alt="">
+
+                </div>
                 <ul>
                     <li class="login">Iniciar Sesion</li>
                     <li class="registrarse">Registrarse</li>
                 </ul><!-- FIN|LOGIN-REGISTRO -->
             </div>
         </header>
+        <div class="contenido">
+            <div class="landing ">
+                <h1>Una nueva forma de mejorar tu experiencia escolar.</h1>
+                <h2>Navega por esta gran aplicacion que te ayudara a realizarte como un profesionista</h2>
+            </div>
         <!--  FIN|HEADER -->
             <!-- Grid| Contenido General -->
             {% block content %}
             {% endblock %}
             <!-- FIN Grid| Contenido General -->
-
+        </div>
+        <div class="info">
+            asda
+        </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
     <script src="{{STATIC_URL}}js/plugins.js"></script>
