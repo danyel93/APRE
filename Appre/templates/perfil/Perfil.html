@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form method="POST" enctype="multipart/form-data">
+		{%csrf token%}
+		{{user.username}}
+		{{form.as_p}}
+		
+	</form>
+	
+</body>
+</html>

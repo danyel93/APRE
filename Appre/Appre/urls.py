@@ -19,5 +19,7 @@ urlpatterns = patterns('',
     url(r'^accounts/', include('allauth.urls')),
     # Url para vizualizar las todas las posibles imagenes 
     url(r'Imagenes/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.MEDIA_ROOT, } ),
+    # Url para visualizar los datos del perfil
+    url(r'^' , include('Aplicaciones.Perfil.urls')),   
 )
 
