@@ -1,7 +1,8 @@
 @import 'nib'
 @import 'nib/gradients'
 //*VARIABLES DE COLORES*//
-azul = #2196F3
+azul = rgb(33, 146, 208)
+azul-trans = rgba(33, 146, 208,0.8)
 azul-2 = #1976D2
 rojo = #D32F2F
 rojo-hover = #F44336
@@ -11,27 +12,46 @@ gris = #7f8c8d
 fondo = #E7E2DC
 c-header = #009688
 c-negro = rgba(33, 33, 33, .4)
+c-azul = #2192D0
+c-morado = rgb(143, 66, 151)
+c-naranja = #FF5722
+c-verde = rgb(113, 190, 70)
+c-azulrey = #3F51B5
+c-amarillo = #FFC107
+c-magenta = rgb(235, 0, 139)
+c-gris = #F9F9F9
+/*Box Shadow Elementos*/
+bs-1 = 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+bs-2 = 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+bs-3 = 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+bs-4 = 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+bs-5 = 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
 
 //*ESTILOS TAGS*//
 html,body
-	width 100%
+	font-family "RobotoDraft","Roboto",sans-serif
+	font-size 62.5%
 	height 100%
+	margin 0
 	min-height 100%
 	position relative
-	margin 0
-	font-family "RobotoDraft","Roboto",sans-serif
 	smoothing antialiased
 	text-rendering optimizeLegibility
-	font-size 16px
+	width 100%
+	
+	
 body
-	background-image url(../img/logo.jpg)
-	background-size cover
 	background-attachment fixed
+	background-image url(../img/logo.jpg)
 	background-position center center
 	background-repeat no-repeat
+	background-size cover
+	
 	
 ul
 	list-style none
+	padding 0
+	margin 0
 /*********************************
 	iconos para las secciones
 **********************************/

@@ -1,27 +1,29 @@
-/*Botones del Header*/
-.registrarse,.login
-	border-radius 2px
-	transition all 200ms ease-in-out
-	border solid 1px #fff
-.registrarse
-	&:hover
-		border solid 1px rojo
-		background-color rojo
-.login
-	color rojo
-	background-color #FFF
-	transition all 200ms ease-in-out
-	&:hover
-		border solid 1px rojo
-		background-color rojo
-		color white
 /*GRID*/
 .grid 
-	width 100%
-	max-width 1366px
-	position relative
+	border dashed 1px white
 	margin 0 auto
+	max-width 1366px
 	padding 0
+	position relative
+	width 100%
+/*Botones del Header*/
+.registrarse,.login
+	border solid 1px #fff
+	border-radius 2px
+	transition all 200ms ease-in-out
+.registrarse
+	&:hover
+		background-color rojo
+		border solid 1px rojo
+.login
+	background-color #FFF
+	color rojo
+	transition all 200ms ease-in-out
+	&:hover
+		background-color rojo
+		border solid 1px rojo
+		color white
+
 	
 /*CLASES PARA COLORES*/
 .fc-verde
@@ -29,5 +31,72 @@
 /*Posicion de letras*/
 .ta-right
 	text-align right !important
+/*Titulo Seccion*/
+.titulos-secciones
+	width 100%
+	padding 20px 0
+	position relative
+	font-size 2.5rem
+	font-weight 800
+	text-align center
+	color c-azul
+	span
+		display block
+		border solid 2px c-azul
+		width 100px
+		position absolute
+		left 50%
+		margin-left -50px
+/*IMAGEN*/
+.b-lazy 
+	opacity 0
+.t-circulo 
+	position absolute
+	border-radius 50%
+	transform translate3d(0,0,0)
+	backface-visibility hidden
+	perspective 1000
+	z-index 1
+
+/*CARGANDO*/
+.cir-car
+	width 100px
+	height 100px
+	position absolute
+	top 50%
+	left 50%
+	margin-top -50px
+	margin-left -50px
+.circular
+	animation rotar 2000ms ease-in-out infinite
+	height 100px
+	position relative
+	width 100px
+
+.path 
+	animation dash 1.5s ease-in-out infinite
+	/*Color del 'cargando'*/
+	stroke c-azul
+	stroke-dasharray 1,200
+	stroke-dashoffset 0
+	stroke-linecap round
+
+/***************
+ANIMACIONES
+***************/
+/*Animacion del cargando*/
+@keyframes rotar
+	100%
+		transform rotate(360deg)
+@keyframes dash
+	0%
+		stroke-dasharray 1,200
+		stroke-dashoffset 0
+	50%
+		stroke-dasharray 89,200
+		stroke-dashoffset -35
+	100%
+		stroke-dasharray 89,200
+		stroke-dashoffset -124
 	
-/*Botones*/
+		
