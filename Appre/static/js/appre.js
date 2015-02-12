@@ -58,10 +58,11 @@ $(window).bind('scroll load ', function(){
 	var Click_boton = function(evento){
 		/*variables*/
 		var xPantalla,yPantalla,xElemento,yElemento,xPos,yPos,top,left;
-		var valores = this.getBoundingClientRect()
+		var valores = this.getBoundingClientRect();
+		console.log(evento);
 		var contenedor_boton = this.target;
-		yPos = evento.y-valores.top;
-		xPos = evento.x-valores.left;
+		yPos = evento.clientY-valores.top;
+		xPos = evento.clientX-valores.left;
 		//Dibujar
 		var material_boton = new Nuevo_ele({
 			"height":"1px",
@@ -90,7 +91,7 @@ $(window).bind('scroll load ', function(){
 		}
 		
 	}
-	
+
 	/*Inicializar LazyLoad*/
 	var bLazy = new Blazy({
 		offset: 100,
