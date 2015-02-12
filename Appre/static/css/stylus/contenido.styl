@@ -1,13 +1,8 @@
 .contenido
 	background-color c-negro
-	display block
-	height 100%
+	min-height 100%
 	position relative
 	width 100%
-	transform-style preserve-3d
-	transform translate3d(0, 0, 0)
-	perspective 1000
-	backface-visibility hidden
 	.landing
 		height 50%
 		left 50%
@@ -48,55 +43,151 @@
 			margin-left -160px
 			&:hover
 				background-color azul-2
-				
-			
-		
-		
-.bnc-pro
-	background-color #EEEEEE
-	display block
-	padding 50px 0
-	position relative
+/***********************
+	Principal
+***********************/
+.principal
+	background-color #fff
 	width 100%
-	.bnc-pro-con
-		background-color #ffffff
-		border-radius 3px
-		box-shadow bs-1
+	padding-top 20px
+	padding-bottom 0
+/***********************
+	About 
+***********************/
+.acerca
+	opacity 0
+	margin-top 100px
+.about
+	text-align center
+	width 100%
+	margin 0 auto
+	h2
+		font-size 3.5rem
+		font-weight 700
+	p
 		font-size 2rem
-		position relative
-		overflow hidden
-		ul
-			position relative
-			width 40%
-			li
+		width 70%
+		text-align center
+		display block
+		margin 0 auto
+		line-height 2
+	ul
+		width 100%
+		font-size 3.5rem
+		font-weight 400
+		margin-top 40px
+		li 
+			width 46%
+			padding 1%
+			margin-left -4px 
+			display inline-block
+			img
+				max-width 50%
+				display block
+				margin 0 auto
+			p
+				font-size 1.8rem
+				font-weight 400
+				text-align left
+				line-height 1.5
+				padding-top 30px
+/***********************
+		Noticias
+***********************/
+.noticias-principal
+	font-size 1.8rem
+	article
+		width 80%
+		border solid 1px #000
+		display block
+		margin 0 auto
+		padding .5%
+		background-color #fff
+		border solid 1px #E0E0E0
+		img
+			width 20%
+			display inline-block
+			border-radius 50%
+			border solid 4px verde
+			transform translate3d(0,0,0)
+			backface-visibility hidden
+			perspective 1000
+			margin 0
+			padding 0
+			overflow hidden
+		.not-txt
+			width 79%
+			display inline-block
+			vertical-align top
+			margin-left -10px
+			padding 0
+			h2,span,p,a
+				margin-left 3%
+			h2
+				padding 0
+				margin-bottom 0
+			span
+				font-size 1.4rem
+				padding 0
+				color gris
+			a
+				color white
+				padding 15px 25px
+				display block
+				background-color c-azul
+				margin-top 30px
+				width 150px
+				text-align center
+				border-radius 3px
+				transition 400ms all ease-in-out
 				box-shadow bs-1
-				padding 25px 0
-				position relative
-				transition all 400ms ease
-				margin 0
-				background-color #ffffff
 				&:hover
 					box-shadow bs-2
-				figure
-					width 20%
-					margin 0 10px
-					padding 0
-					vertical-align middle
-					display inline-block
-					position relative
-					img
-						max-width 100%
-						border-radius 50%
-				.texto
-					display inline-block
-					width 75%
-					margin 0
-					vertical-align top
-					position relative
-				span
-					position absolute
-					bottom 5px
-					right 10px
-					color c-negro
-					font-size 1.5rem
-					font-weight 800
+				
+/***********************
+	Banco de Proyectos 
+***********************/
+.bnc-pro-con
+	background-color #ffffff
+	border-radius 3px
+	box-shadow bs-1
+	font-size 2rem
+	position relative
+	overflow hidden
+	min-height 100%
+	ul
+		position relative
+		width 40%
+		li
+			box-shadow bs-1
+			padding 25px 0
+			position relative
+			transition all 400ms ease
+			margin 0
+			background-color #ffffff
+			cursor pointer
+			&:hover
+				box-shadow bs-2
+			figure
+				width 20%
+				margin 0 10px
+				padding 0
+				vertical-align middle
+				display inline-block
+				position relative
+				img
+					max-width 100%
+					border-radius 50%
+			.texto
+				display inline-block
+				width 75%
+				margin 0
+				vertical-align top
+				position relative
+			span
+				position absolute
+				bottom 5px
+				right 10px
+				color c-negro
+				font-size 1.5rem
+				font-weight 800
