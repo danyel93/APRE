@@ -2,14 +2,33 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Perfil</title>
 </head>
 <body>
 	<form method="POST" enctype="multipart/form-data">
-		{%csrf token%}
 		{{user.username}}
-		{{form.as_p}}
-		
+			
+		<label>Nombre</label>
+		<input type="text" pattern="[a-zA-Z]*" name="nombre" ><br>
+		<label>Apellido Paterno</label>
+		<input type="text" pattern="[a-zA-Z]*" name="apellido_p"><br>
+		<label>Apellido Materno</label>
+		<input type="text" pattern="[a-zA-Z]*" name="apellidom"><br>	
+		<label>Numero de Control</label>
+		<input type="text" name="numero_control"><br>
+		<label>Telefono</label>
+		<input type="number" required name="tel_movil"><br>
+		<label>Avatar</label>
+		<input type="file" name="avatar"><br>
+		<label>Fecha de Registro</label>
+		<input type="text" name="fecha_registro"><br>
+		<label>Tipo de usuario</label>
+		<input type="text" name="tipo_usuario"><br>
+		<label>Editar</label>
+		<input type="text" name="editar"><br>
+		<label>Activo</label>
+		<input type="text" name="activo"><br>
+		 <input type="submit" value="Enviar">
 	</form>
 	
 </body>
